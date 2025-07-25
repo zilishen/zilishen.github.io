@@ -1647,3 +1647,48 @@ button {
 	body.is-preload #footer {
 		opacity: 0;
 	}
+
+/* Container for aligning the writing boxes */
+.writing-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust spacing between boxes as needed */
+    justify-content: center; /* Center the boxes within the container */
+}
+
+/* Individual writing box styles */
+.writing-box {
+    background: rgba(127, 125, 125, 0.8); /* Alpha-transparent background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px 20px 0px 20px; /* Reduced bottom padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visual separation */
+    flex: 1 1 calc(30% - 40px); /* Responsive sizing: boxes will shrink to fit and can break to the next line */
+    min-width: 280px; /* Minimum width for the boxes */
+    max-width: 500px; /* Maximum width for the boxes */
+}
+
+/* Title styles */
+.writing-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #f6f1f1; /* Change to desired color */
+    text-decoration: none;
+}
+
+/* Title hover effect */
+.writing-title:hover {
+    text-decoration: underline;
+}
+
+/* Description styles */
+.writing-description {
+    font-size: 1em;
+    color: #d7d2d2; /* Change to desired color */
+    margin-top: 10px;
+}
+/* Date styles */
+.writing-date {
+    font-size: 0.9em;
+    color: #d7d2d2; /* Change to desired color */
+    margin-bottom: 10px;
+}
