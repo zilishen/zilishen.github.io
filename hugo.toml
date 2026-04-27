@@ -40,15 +40,6 @@ buildExpired = false
     imageWidth = 200
     imageHeight = 300
     imageTitle = 'Zili Shen'
-    [[params.profileMode.buttons]]
-      name = 'About'
-      url = '/about'
-    [[params.profileMode.buttons]]
-      name = 'Research'
-      url = '/research'
-    [[params.profileMode.buttons]]
-      name = 'Blog'
-      url = '/blog'
 
   [[params.socialIcons]]
     name = 'linkedin'

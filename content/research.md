@@ -20,7 +20,7 @@ LLM agents are increasingly deployed to carry out complex, multi-step tasks on b
 
 - [Google Scholar](https://scholar.google.com/citations?user=MSLcNzQAAAAJ&hl=en&oi=ao) · [NASA ADS](https://ui.adsabs.harvard.edu/search/filter_author_facet_hier_fq_author=AND&filter_author_facet_hier_fq_author=author_facet_hier%3A%221%2FShen%2C%20Z%2FShen%2C%20Zili%22&filter_database_fq_database=AND&filter_database_fq_database=database%3A%22astronomy%22&fq=%7B!type%3Daqp%20v%3D%24fq_author%7D&fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_author=(author_facet_hier%3A%221%2FShen%2C%20Z%2FShen%2C%20Zili%22)&fq_database=(database%3A%22astronomy%22)&q=%20%20author%3A%22shen%2C%20zili%22&sort=date%20desc%2C%20bibcode%20desc&p_=0)
 - 37 peer-reviewed papers, 5 first-author
-- 430+ citations · H-index: 12
+- 600+ citations · H-index: 12
 
 **Ph.D. Thesis: The Dragonfly Ultrawide Survey**
 
