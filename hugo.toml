@@ -1,0 +1,86 @@
+baseURL = 'https://zilishen.github.io/'
+languageCode = 'en-us'
+title = 'Zili Shen'
+theme = 'PaperMod'
+paginate = 10
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[params]
+  env = 'production'
+  description = 'AI eval research engineer specializing in LLM-based agents. Yale Ph.D. in astrophysics.'
+  keywords = ['AI safety', 'LLM evals', 'astrophysics', 'research']
+  author = 'Zili Shen'
+  DateFormat = 'January 2, 2006'
+  defaultTheme = 'auto'
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = false
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = false
+  hidemeta = false
+  comments = false
+  showtoc = false
+
+  [params.profileMode]
+    enabled = true
+    title = 'Zili Shen'
+    subtitle = 'AI eval research engineer · Yale Ph.D. in astrophysics'
+    imageUrl = 'images/headshot_full.jpeg'
+    imageWidth = 200
+    imageHeight = 300
+    imageTitle = 'Zili Shen'
+    [[params.profileMode.buttons]]
+      name = 'About'
+      url = '/about'
+    [[params.profileMode.buttons]]
+      name = 'Research'
+      url = '/research'
+    [[params.profileMode.buttons]]
+      name = 'Blog'
+      url = '/blog'
+
+  [[params.socialIcons]]
+    name = 'linkedin'
+    url = 'https://www.linkedin.com/in/zili-shen/'
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/zilishen/'
+  [[params.socialIcons]]
+    name = 'email'
+    url = 'mailto:zilishenca@gmail.com'
+
+[menu]
+  [[menu.main]]
+    identifier = 'about'
+    name = 'About'
+    url = '/about/'
+    weight = 10
+  [[menu.main]]
+    identifier = 'research'
+    name = 'Research'
+    url = '/research/'
+    weight = 20
+  [[menu.main]]
+    identifier = 'blog'
+    name = 'Blog'
+    url = '/blog/'
+    weight = 30
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+    style = 'github'
