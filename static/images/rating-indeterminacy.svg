@@ -1,0 +1,65 @@
+<svg width="680" height="310" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#9ca3af"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="310" fill="#ffffff" rx="10" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="340" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#111827">Rating Indeterminacy</text>
+  <text x="340" y="50" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#6b7280">&#x3B2; = P(Yes &#x2208; response set &#x7C; forced choice = No)</text>
+
+  <!-- Vertical divider -->
+  <line x1="340" y1="68" x2="340" y2="248" stroke="#e5e7eb" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <!-- LEFT: Forced Choice -->
+  <text x="170" y="80" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-weight="bold" fill="#374151">Forced-Choice</text>
+
+  <!-- Item box left -->
+  <rect x="30" y="92" width="280" height="62" rx="6" fill="#f9fafb" stroke="#d1d5db" stroke-width="1"/>
+  <text x="170" y="113" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#374151">"No, not as written,</text>
+  <text x="170" y="129" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#374151">but they're very close."</text>
+  <text x="170" y="146" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#9ca3af">Is this correct? Pick ONE.</text>
+
+  <!-- Arrow down left -->
+  <line x1="170" y1="158" x2="170" y2="183" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Forced answer: No -->
+  <rect x="126" y="186" width="88" height="36" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="170" y="209" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="bold" fill="#dc2626">No</text>
+
+  <!-- Hidden note -->
+  <text x="170" y="244" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#9ca3af">&#x3B2; is hidden</text>
+
+  <!-- RIGHT: Response Set -->
+  <text x="510" y="80" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-weight="bold" fill="#374151">Response-Set</text>
+
+  <!-- Item box right -->
+  <rect x="370" y="92" width="280" height="62" rx="6" fill="#f9fafb" stroke="#d1d5db" stroke-width="1"/>
+  <text x="510" y="113" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#374151">"No, not as written,</text>
+  <text x="510" y="129" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#374151">but they're very close."</text>
+  <text x="510" y="146" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#9ca3af">Is this correct? Pick ALL that apply.</text>
+
+  <!-- Arrow down right -->
+  <line x1="510" y1="158" x2="510" y2="183" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Response set: Yes + No -->
+  <rect x="426" y="186" width="74" height="36" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="463" y="209" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="bold" fill="#16a34a">Yes</text>
+
+  <rect x="510" y="186" width="74" height="36" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="547" y="209" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="bold" fill="#dc2626">No</text>
+
+  <!-- Revealed note -->
+  <text x="510" y="244" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#d97706">&#x3B2; &gt; 0: this item is ambiguous</text>
+
+  <!-- Bottom rule -->
+  <line x1="30" y1="258" x2="650" y2="258" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- Beta scale -->
+  <text x="340" y="276" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#6b7280">&#x3B2; across tasks and models: near 0 (well-specified) &#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014; above 0.6 (highly ambiguous)</text>
+  <text x="340" y="296" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#9ca3af">As &#x3B2; grows, forced-choice validation picks the wrong judge more often.</text>
+</svg>
