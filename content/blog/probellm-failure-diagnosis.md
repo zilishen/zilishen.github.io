@@ -41,9 +41,9 @@ Across four models (Deepseek-v3.2, Llama-3.1-8b-instruct, Claude-3.5-sonnet, and
 
 ProbeLLM requires questions with verifiable answers, because the refinement step needs to check ground truth automatically. Agentic evaluations — where the model uses tools and the "right answer" depends on the full trajectory of a multi-step task — don't satisfy that requirement. The paper also only evaluates base LLMs, not agents. For agents, a failure in the final answer might have its root cause several tool calls earlier. Whether this kind of diagnosis can extend to agentic settings is an open problem.
 
-I'm also still thinking about the failure mode clustering step. The approach embeds failure cases and clusters them in embedding space. But LLMs already have an embedding, so we could simply give all the failures to a language model and ask it to summarize why the scores changed. The embedding approach is certainly more scalable and less prone to hallucinations, but giving a small number of failure cases to an LLM could be a fast way of finding failure modes.
+I'm also still thinking about the failure mode clustering step. Mapping failure cases into embedding space and applying well-established clustering algorithms is statistically sound and operationally scalable. But, turning the identified clusters in high-dimensional space back into human-understandable content involves smart sampling strategies. Maybe this could be simplified. LLMs already operate by turning input text into embedding space vectors and then decoding the response to get back natural language, so we could simply give all the failures to a language model and ask it to summarize why the scores changed. Sure, it could hallucinate, but this is a fast way that does not involve extra infrastructure.
 
-For now, what ProbeLLM does well is real: it turns static benchmarks into dynamic probes, and it finds failure modes that static benchmarks miss. That's already a meaningful step toward making evals actionable.
+My takeaways: 1. failure diagnosis is super necessary to make evals actionable. 2. But, this is a hard thing to do because you need to balance breadth and depth of the search. This paper gives us a concrete recipe that we can implement in our own ways.
 
 ---
 
