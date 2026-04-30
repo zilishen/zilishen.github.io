@@ -37,6 +37,8 @@ Once the search is done, ProbeLLM clusters the failure cases. Each failure is re
 
 Across four models (Deepseek-v3.2, Llama-3.1-8b-instruct, Claude-3.5-sonnet, and Ministral-14b), ProbeLLM consistently found more failure modes than static benchmarks alone. For Llama-3.1-8b-instruct, static benchmarks found 8 distinct failure clusters; ProbeLLM found 24, with 16 that the benchmark never surfaced. For Claude-3.5-sonnet: 5 from the benchmark, 15 total, with 10 that ProbeLLM found on its own.
 
+{{< figure src="/images/probeLLM-cluster.png" alt="How ProbeLLM maps failure cases into embedding space, clusters them, and translates the clusters back into natural language failure mode descriptions." caption="Each failure case is represented by the question and an LLM-generated error description. This text gets mapped into a high-dimensional embedding space, where clustering groups similar failures together. Then, samples are drawn near the boundaries of each cluster. Each sample is mapped back into natural language description, which gives an example of the failure mode." >}}
+
 ## What I'm still thinking about
 
 ProbeLLM requires questions with verifiable answers, because the refinement step needs to check ground truth automatically. Agentic evaluations — where the model uses tools and the "right answer" depends on the full trajectory of a multi-step task — don't satisfy that requirement. The paper also only evaluates base LLMs, not agents. For agents, a failure in the final answer might have its root cause several tool calls earlier. Whether this kind of diagnosis can extend to agentic settings is an open problem.
