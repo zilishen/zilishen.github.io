@@ -7,7 +7,7 @@ summary: "AI products can change under your feet. Here's what I learned about me
 
 If you've worked on an AI product, you've probably felt this: fix one thing and something else breaks. Add a new feature and behavior you thought was settled starts acting differently. Swap the base model, and the product feels like a different product.
 
-There's a reason for this. Most agentic AI products are mostly scaffolding, but the core logic is driven by an LLM that is stochastic and outside your control. Traditional code is self-documenting: reading it tells you what it will do when you run it. An LLM call in your code does not do that. Any change in the prompt can have unexpected effects on the outcome, and you won't find out until you run the product.
+There's a reason for this. Without custom-trained models, agentic AI products are mostly scaffolding. The core logic is driven by an LLM that is stochastic and outside your control. Any change in the prompt can have unexpected effects on the outcome, and you won't find out until you run the product.
 
 Unit tests and integration tests tell you whether the scaffolding works. They say nothing about whether the AI does what you want it to do. For that, you need evals. For the past eight months, building them has been my full-time job at a startup. Here's what I learned.
 
@@ -41,15 +41,23 @@ The pitfalls above are all about doing evals correctly. But before worrying abou
 
 **Axiom 1: Evals should produce actionable insights.**
 
-There's a more fundamental question to ask when you design an eval: what will someone do with this result? At a research lab, a good eval might expose a weakness in the underlying model and stop there. At a company, that's not enough. You can't fix the model. You can fix your prompts, your architecture, or change to another model. Evals should produce something a person on your team can act on.
+There's a more fundamental question to ask when you design an eval: what will someone do with this result? At a research lab, a good eval might expose a weakness in LLMs. At a company, that's not enough. You can't fix the LLM, but you can fix your prompts, your architecture, or change to another model. Evals should produce something your team can act on.
 
-This rules out a lot of common choices. Most eval platforms ship with pre-built judges for accuracy, helpfulness, or conciseness. These are easy to run and easy to report, but they rarely tell you what to fix. If helpfulness drops by 3%, what does that mean? A percentage score tells you something is wrong. Failure analysis tells you what and why. In order to do that, there needs to be a process to dig into the root cause of failures found in evals. Which type of user question is the agent not handling? Evals should always facilitate root cause analysis so that it can be actionable.
+This axiom guides you away from a lot of common choices. Most eval platforms ship with pre-built judges for accuracy, helpfulness, or conciseness. These are easy to run and easy to report, but they rarely tell you what to fix. If helpfulness drops by 3%, what does that mean? A percentage score tells you something is wrong, but failure analysis tells you what and why. In order to do that, there needs to be a process to dig into the root cause of failures found in evals. That could range from reading [production traces](https://docs.langchain.com/langsmith/observability-concepts#traces) to running more advanced [tree search and clustering algorithms](/blog/probellm-failure-diagnosis/).
 
 **Axiom 2: Eval is an empirical science.**
 
-All the principles of empirical science apply here. Always look at your data. Experiment design matters: if you're comparing two versions of a product, you need to control for everything else or you won't know what caused the difference. And error bars matter. A score without a measure of variance is incomplete. It doesn't tell you how much of what you're seeing is noise, which means you can't tell what is signal.
+All the principles of empirical science apply here:
 
-Looking back at the pitfalls in the previous section, they all trace back to this. Running each eval task only once means ignoring variance. Using an unverified LLM judge means trusting a measurement instrument without validating it. Training on your eval set is the train/test split problem. None of these are AI-specific. They're the same issues that come up in any empirical science, and the solutions are the same too.
+- **Always look at your data.** Not just the aggregate score, but individual failures. A number that averages over everything hides the cases that matter most.
+- **Experiment design matters.** If you're comparing two versions of a product, you need to control for everything else or you won't know what caused the difference.
+- **Error bars matter.** A score without a measure of variance is incomplete. It doesn't tell you how much of what you're seeing is noise, which means you can't tell what is signal.
+
+The issues in the previous section all trace back to this. Running each eval task only does not allow you to measure the variance. Using an unverified LLM judge means trusting a measurement instrument without validating it. Training on your eval set is the train/test split problem. None of these are AI-specific. They're the same issues that come up in any empirical science, and the solutions are the same too.
+
+## Signal and noise
+
+I come from a background in observational astronomy, where I spent a PhD measuring properties of distant galaxies. Galaxies and AI models have more in common than it might seem: both are complex systems where the few things you can observe are a reflection of highly degenerate inner physics. A galaxy's image doesn't tell you exactly what's inside it; an eval score doesn't tell you exactly what's happening inside the model. In both cases, you need carefully designed experiments, validated instruments, and enough repetitions to separate signal from noise. The lessons transfer more than I expected.
 
 ---
 
