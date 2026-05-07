@@ -57,7 +57,7 @@ The issues in the previous section all trace back to this. Running each eval tas
 
 ## Signal and noise
 
-I come from a background in observational astronomy, where I spent a PhD measuring properties of distant galaxies. Galaxies and AI models have more in common than it might seem: both are complex systems where the few things you can observe are a reflection of highly degenerate inner physics. A galaxy's image doesn't tell you exactly what's inside it; an eval score doesn't tell you exactly what's happening inside the model. In both cases, you need carefully designed experiments, validated instruments, and enough repetitions to separate signal from noise. The lessons transfer more than I expected.
+I come from a background in observational astronomy, where I spent a PhD measuring properties of [distant galaxies](/research/#astrophysics). Galaxies and AI models have more in common than it might seem: both are complex systems where the few things you can observe are a reflection of highly degenerate inner physics. A galaxy's image doesn't tell you exactly what's inside it; an eval score doesn't tell you exactly what's happening inside the model. In both cases, you need carefully designed experiments, validated instruments, and enough repetitions to separate signal from noise. The lessons transfer more than I expected.
 
 ---
 
