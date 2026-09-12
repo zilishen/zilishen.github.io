@@ -4,9 +4,9 @@ hidemeta: true
 ShowBreadCrumbs: false
 ---
 
-Zili is a Member of Technical Staff at [P-1 AI](https://p-1.ai), where she works as an AI eval research engineer specializing in LLM-based agents.
+Zili is a Member of Technical Staff at [Lotus AI](https://lotus.ai/) leading the applied research team. 
 
-She graduated from Yale in 2025 with a Ph.D. in astrophysics. For her thesis, she led the science analysis of the [Dragonfly Ultrawide Survey](https://arxiv.org/abs/2407.05200), mapping 10,000 square degrees of the northern sky using a custom data pipeline on AWS.
+Previously she evaluated LLM-based AI agents at [P-1 AI](https://p-1.ai). She graduated from Yale in 2025 with a Ph.D. in astrophysics. For her thesis, she led the science analysis of the [Dragonfly Ultrawide Survey](https://arxiv.org/abs/2407.05200), mapping 10,000 square degrees of the northern sky using a custom data pipeline on AWS.
 
 She writes about science. She contributed 18 articles to [Astrobites](https://astrobites.org/author/zshen/) and worked at the Yale Poorvu Center as a [Graduate Writing Fellow](https://poorvucenter.yale.edu/people/zili-shen), offering one-on-one writing consultations and leading workshops.
 
